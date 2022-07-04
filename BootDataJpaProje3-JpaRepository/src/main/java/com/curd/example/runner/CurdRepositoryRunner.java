@@ -1,5 +1,7 @@
 package com.curd.example.runner;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.dao.DataAccessException;
@@ -16,7 +18,7 @@ public class CurdRepositoryRunner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		try {
+		/*try {
 			CoronaVaccine vaccine = new CoronaVaccine();
 			vaccine.setName("Covisheld");
 			vaccine.setCompany("Serum");
@@ -26,10 +28,23 @@ public class CurdRepositoryRunner implements CommandLineRunner {
 			
 			service.SearchVaccinesByGivenData(vaccine, true, "price").forEach(System.out::println);
 			
+			// Get by ID
+			CoronaVaccine vaccine = service.getVaccineByRegNo(51L);
+			if(vaccine !=null) {
+				System.out.println("Vaccine Details: " + vaccine);
+			}else {
+				System.out.println("Record Not Found");
+			}
+			
+		} catch (DataAccessException e) {
+			e.printStackTrace();
+		}*/
+		try {
+			// delete by IDs
+			System.out.println(service.removeVaccinesByRegNo(List.of(44L,55L)));
 		} catch (DataAccessException e) {
 			e.printStackTrace();
 		}
 	}
-	
 
 }
