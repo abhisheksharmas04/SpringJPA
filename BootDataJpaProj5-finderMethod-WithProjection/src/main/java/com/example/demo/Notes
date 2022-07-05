@@ -1,15 +1,4 @@
-Selecting specific single col or multiple col values from db table or records is called scalar operations or working with projection.
+Here we can get verying specific single or multiple col values from db tables using the support of finders.
+for this we need to take multiple type interfaces and having hierarchy. as shown below
 
--> The finder methods of spring data jpa supports two types of projections:
-	(1) Static Projections: Allows to select fixed coloum values (Single or Multiple)
-	(2) Allows to select specific varying column values (Single or Multiple)
-	
--> Working with static Projections:
-	While dealing with Entity Queries which select all coloum values we can store each records to the object of entity class
-	but while working with scalar queries we need define certain type to hold specific single or multiple coloum values.
-	That is Custome Interface having declaration of getter methods for our choice single or multiple properties.
-	
-	Step-1) Define one Type Interface having getter methods of specific single or multiple properties.
-	Step-2) Declare finder method in the Repository invloving the above type interface in the return type.
-	Step-3) Define method in service class.
-	
+Step1) Create type interfaces having hierarchy as shown above:

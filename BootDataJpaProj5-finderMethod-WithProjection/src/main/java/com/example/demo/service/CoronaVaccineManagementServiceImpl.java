@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.repo.CoronaVaccineRepo;
-import com.example.demo.type.ResultView;
+import com.example.demo.type.View;
 
 
 
@@ -17,7 +17,7 @@ public class CoronaVaccineManagementServiceImpl implements ICoronaVaccineManagem
 	private CoronaVaccineRepo coronaRepo;
 
 	@Override
-	public List<ResultView> searchVaccinesByStartPrice(double price) {
-		return coronaRepo.findByPriceGreaterThanEqualOrderByPrice(price);
+	public <T extends View> List<T> searchVaccinesByCompany(String companyName, Class<T> clazz) {
+		return coronaRepo.findByCompanyOrderByCompanyDesc(companyName, clazz);
 	}
 }

@@ -1,8 +1,6 @@
 package com.example.demo.type;
 
-public interface ResultView {
-	
-	public String getName();
+public interface ResultView3 extends View {
 	public String getCountry();
 
 }
